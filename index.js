@@ -2,6 +2,8 @@ const express = require('express');
 
 const { getConnection } = require('./db/db-connection-mongo');
 
+const cors = require('cors')
+
 // crear las tablas cuadno se levante la aplicacion
 const Marca = require('./modelos/Marca');
 const Inventario = require('./modelos/Inventario');
@@ -10,7 +12,8 @@ const TipoEquipo = require('./modelos/TipoEquipo');
 const Usuario = require('./modelos/Usuario');
 
 const app = express();
-const port = 3000;
+const port = 4000;
+app.use(cors());
 
 getConnection();
 
